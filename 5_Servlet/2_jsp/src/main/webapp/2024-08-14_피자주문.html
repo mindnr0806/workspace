@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피자 주문서</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet"> 
+
+    <script src="../../resources/js/pizza.js"></script>
+
+    <style>
+        * { font-family: "Single Day", cursive;}
+        .header {color: cadetblue; animation: rotate-title 5s linear infinite; }
+
+        @keyframes rotate-title {
+            from {
+                transform: perspective(700px) rotateY(0deg);
+            }
+            to {
+                transform: perspective(700px) rotateY(360deg);
+            }
+        }
+
+        .content { display: flex; flex-direction: row; }
+        .content > * { margin: 2%;}
+        #order { 
+            box-sizing: border-box;
+            border: 2px groove salmon;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            width: 50%;
+            height: 600px;
+            padding: 3%;
+
+            overflow: auto;
+        }
+        #order fieldset:first-child {
+            display: flex;
+            flex-direction: column;
+        }
+        .menu_section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* 항목 간의 간격 */
+        }
+
+        .menu_section label {
+            display: inline-block;
+            margin-left: 5px;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .menu_section input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .menu_item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        #order_sheet {
+            box-sizing: border-box;
+            border: 2px groove darkgrey;
+            width: 50%;
+            padding: 3%; 
+        }
+
+        .btn-area {display: flex; justify-content: space-between;}
+
+
+        button { 
+            padding: 3%; 
+            border: none; 
+            border-radius: 20px; 
+            background-color: salmon; 
+            color: white; 
+            cursor: pointer;
+        }
+        fieldset { 
+            border: 3px dashed darkred;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header" align="center">
+            <h1>Pizza Order Form</h1>
+        </div>
+        <div class="content">
+            <form id="order" action="#">
+                <fieldset>
+                    <legend>주문자 정보</legend>
+                    <label for="address">주소</label>
+                    <input type="text" id="address">
+                    <label for="phone">연락처</label>
+                    <input type="tel" id="phone">
+                </fieldset>
+                <hr>
+                <fieldset>
+                    <legend>메뉴 정보</legend>
+                    피자:
+                    <select id="main_menu">
+                        <option>콤비네이션</option>
+                        <option>불고기</option>
+                        <option>크림치즈</option>
+                        <option>페퍼로니</option>
+                        <option disabled>하와이안(품절)</option>
+                    </select>
+                    <br><br>
+
+                    토핑:
+                    <div class="menu_section">
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="치즈" id="tp_cheese">
+                            <label for="tp_cheese">치즈</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="토핑2배" id="tp_double">
+                            <label for="tp_double">토핑2배</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="치즈크러스트" id="tp_crust">
+                            <label for="tp_crust">치즈크러스트</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="고구마무스" id="tp_swt_potato">
+                            <label for="tp_swt_potato">고구마무스</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="갈릭디핑" id="tp_galic_dip">
+                            <label for="tp_galic_dip">갈릭디핑</label>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    사이드:
+                    <div class="menu_section">
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="치즈오븐스파게티" id="sd_pasta">
+                            <label for="sd_pasta">치즈오븐스파게티</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="까르보나라스파게티" id="sd_carbonara">
+                            <label for="sd_carbonara">까르보나라스파게티</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="버팔로윙" id="sd_buffalo_wing">
+                            <label for="sd_buffalo_wing">버팔로윙</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="치즈스틱" id="sd_cheese_stick">
+                            <label for="sd_cheese_stick">치즈스틱</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="핫소스" id="sd_hot_sauce">
+                            <label for="sd_hot_sauce">핫소스</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="파마산" id="sd_parmesan">
+                            <label for="sd_parmesan">파마산</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="피클" id="sd_pickle">
+                            <label for="sd_pickle">피클</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="콜라" id="sd_coke">
+                            <label for="sd_coke">콜라</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="사이다" id="sd_cider">
+                            <label for="sd_cider">사이다</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="제로콜라" id="sd_zero_coke">
+                            <label for="sd_zero_coke">제로콜라</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="제로사이다" id="sd_zero_cider">
+                            <label for="sd_zero_cider">제로사이다</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <hr>
+                <div class="btn-area">
+                    <button type="button" onclick="order()">주문하기</button>
+                    <button type="reset">다시 고르기</button>
+                    <button type="button" onclick="history.back();">뒤로가기</button>
+                </div>
+
+            </form>
+            <div id="order_sheet">
+                <button onclick="deleteOrder();">주문 목록 삭제</button>
+                <hr>
+                <div id="orderer_info"></div>
+                <div id="order_list"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

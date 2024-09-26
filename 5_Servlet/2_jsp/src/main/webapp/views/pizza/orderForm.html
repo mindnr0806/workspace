@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>피자 주문하기</title>
+</head>
+<body>
+    <h1>피자 주문하기</h1>
+
+    <h3>현재 날짜</h3>
+    
+  
+
+    <div class="content"> 
+
+        <form action="/2_jsp/orderPizza.do" >
+            <fieldset>
+                <legend>주문자 정보</legend>
+                <label for="name">이름</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="name">
+                <br><br>
+                <label for="tel">연락처</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="tel" id="tel">
+                <br><br>
+                <label for="address">주소</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" id="address">
+                <br><br>
+                <label for="phone">요청사항</label>
+                &nbsp;
+                <textarea name="content" 
+                            placeholder="내용을 입력하시오."
+                            cols="20"
+                            rows="2"
+                ></textarea>
+                &nbsp;&nbsp;
+            </fieldset>
+
+            <form id="order" action="#">
+                <fieldset>
+                    <legend>주문 정보</legend>
+                    <select id="main_menu">
+                        <option>콤비네이션</option>
+                        <option>치즈피자</option>
+                        <option>불고기피자</option>
+                        <option>화와이안피자</option>
+                        <option>페퍼로니피자</option>
+                    </select>
+                    <br>
+                    토핑:
+                    <div class="menu_section">
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="치즈" id="tp_cheese">
+                            <label for="tp_cheese">치즈</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="올리브" id="tp_double">
+                            <label for="tp_double">올리브</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="불고기" id="tp_crust">
+                            <label for="tp_crust">불고기</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="치즈 크러스트" id="tp_swt_potato">
+                            <label for="tp_swt_potato">치즈 크러스트</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="파인애플" id="tp_galic_dip">
+                            <label for="tp_galic_dip">파인애플</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="베이컨" id="tp_galic_dip">
+                            <label for="tp_galic_dip">베이컨</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="포테이토" id="tp_galic_dip">
+                            <label for="tp_galic_dip">포테이토</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="topping" value="새우" id="tp_galic_dip">
+                            <label for="tp_galic_dip">새우</label>
+                        </div>
+                    
+                    <br>
+
+                    사이드:
+                    <div class="menu_section">
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="콜라" id="sd_pasta">
+                            <label for="sd_pasta">콜라</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="사이다" id="sd_carbonara">
+                            <label for="sd_carbonara">사이다</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="피클" id="sd_buffalo_wing">
+                            <label for="sd_buffalo_wing">피클</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="치즈오브스파게티" id="sd_cheese_stick">
+                            <label for="sd_cheese_stick">치즈오브스파게티</label>
+                        </div>
+                        <div class="menu_item">
+                            <input type="checkbox" name="side_menu" value="치킨텐더" id="sd_hot_sauce">
+                            <label for="sd_hot_sauce">치킨텐더</label>
+                        </div>
+                    </div>
+                    </fieldset>
+
+                    <br>
+
+                    <button>주문</button>
+
+                    <button>초기화</button>
+
+
+    
+</body>
+</html>
