@@ -1,0 +1,109 @@
+/* body [background-color: apua } */
+
+/* ---속성 선택자 -----------------------*/
+/* div 욧고 중 name 속성 값이 "name1" 과 일치하는 요소 */
+div[anme=name1]{
+    background-color: tomato;
+}
+
+/* div 요소 중 name 속성 값에 "name1"이 포함되어 있는 요소(키워드 x)*/
+div[name~=name1]{
+    background-color: blueviolet;
+}
+
+/*div 요소 중 class  속성 값이 "class로 시작하는 요소 (단어, -로 구분) */
+div[class|=class]{
+    background-color: plum;
+}
+/*div 요소 중 name 속성 값이 "na"로 시작하는 요소*/
+dic[name^=name]{
+    background-color: orange;
+}
+/*div 요소 중 class 속성 값이 "ss"로 시작하는 요소*/
+div[class$=ss]{
+    color:white;
+}
+
+/*div 요소 중 class 속성 값이 "i"로 시작하는 요소*/
+div[class*=i]{
+    background-color: coral;
+    color: black;
+}
+
+/* Q. class 속성 값이 div-class인 요소 중에 name 속성 값에 name3이 포함되어 있는 요소 (배경색 pink)*/
+.div-class[name~=name3]{
+    background-color: pink;
+}
+
+/*----자손 선택자 후손 선택자---------------------*/
+/* a > b : a 요소의 자손 요소 중 b 요소만 전ㅇ부 선택 */
+
+/*아이디가 parent와 요소의 자손들 중 h4 요소만 선택 */
+#parent > h4 {background-color: olive;}
+
+/* 아이디가 parent인 요소의 모든 자손 선택 */
+#parent > *{color: hotpink;}
+
+/*아이디가 parent인 요소인 자손 중 ul 요소의 자손 중 li 요소 선택 */
+#parent > ul > li{color: cornflowerblue;}
+
+/*아이디가 parent인ㅍ 요소의 후손들의 배경색을 변경 */
+#parent {background-color: yellow;}
+
+/* 아이디가 parent인 요소의 후손 중 li 요소만 선택 */
+#parent li {color: blue;}
+
+/*---동의 선택자 ------*/
+/* a +b :a 요소 바로 뒤에 오는 b 요소 하나*/
+#sibling + div {background-color: gray;}
+
+
+#sibling + ul {background-color: tomato;} /*바로 뒤에 오는 ul 요소가 아니기 때문에 선택 안됨
+
+/* a~b : a 요소와 같은 레벨에 있는 모든 b 요소 */
+#sibling ~ ul {background-color: tomato;}
+
+/*--반응 선택자--*/
+.area{
+    background-color: yellowgreen;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+#active-test:active{
+    background-color: red;
+    color: white;
+}
+
+#hover-test:hover{
+    background-color: royalblue;
+    color: brown;
+}
+
+/*---상태 손택자-----*/
+/* input 요소의 type 속성의 값이 checkbox인 요소 중 체크된 상태인 요소*/
+input[type=checkbox]:checked{
+        width: 30px;
+        height: 30px;
+
+}
+input[type=checkbox]:checked+label{
+    font-size:30px;
+}
+
+/* input 요소 중 name 속성의 값이 user로 시작하는 요소*/
+input[name^=user]:focus {
+    background-color: navy;
+    color: white;
+}
+
+button:enabled{
+    background-color: deepskyblue;
+}
+
+button:disabled{
+    background-color: deepskyblue;
+    opaction: 1; /*불투명도 설정 (1: 불투명-> 선명하게 표현, 0~1: 0으로갈수록투명해짐, 0:투명->안보임)*/
+    
+}
+
