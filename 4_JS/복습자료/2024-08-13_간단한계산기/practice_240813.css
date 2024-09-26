@@ -1,0 +1,9 @@
+.wrap { border: 5px solid plum; padding: 3%; }
+
+.header { border-bottom: 3px solid #17bea8; color: #17bea8; }
+.content { padding-top: 3%; }
+
+.content input[type=number] { width: 50px; border: none; box-shadow: 0px 0px 5px plum; }
+.content select { border: none; box-shadow: 0px 0px 5px plum; }
+.content input[type=button] { border: none; background-color: white; box-shadow: 0px 0px 5px plum; cursor: pointer; }
+.content input[type=button]:active { background-color: plum; color: white; }

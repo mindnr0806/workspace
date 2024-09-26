@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024-08-13 복습 - 간단한 계산기</title>
+    <style>
+      
+    .wrap { border: 5px solid plum; padding: 3%; }
+
+    .header { border-bottom: 3px solid #17bea8; color: #17bea8; }
+    .content { padding-top: 3%; }
+
+    .content { padding-top: 3%; }
+    .content input[type=number] { width: 50px; border: none; box-shadow: 0px 0px 5px plum; }
+    .content select { border: none; box-shadow: 0px 0px 5px plum; }
+
+    </style>
+
+    <!-- TODO: practice_240813.js 파일을 4_JS\resources\js\ 경로에 복사한 후 연결 -->
+    <script src></script>
+    <!-- TODO: practice_240813.css 파일을 4_JS\resources\css\ 경로에 복사한 후 연결 -->
+     
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <h2>간단한 계산기</h2>
+        
+        </div>
+        <div class="content">
+            <input type="number" id="num1">
+            <select id="op">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+                <option>%</option>
+            </select>
+            <input type="number" id="num2">
+            <!-- TODO: = 버튼 클릭 시 결과를 #result 요소에 출력 -->
+            <input type="button" value="=" onclick="calculator();">
+            <input type="number" id="result" readonly>
+            
+        </div>
+    </div>
+</body>
+</html>
