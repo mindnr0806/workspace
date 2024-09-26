@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color:  rgb(136, 214, 108);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1 0;
+    text-align: center;
+    font-size: 45px;   
+}
+
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+}
+
+
+header nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+header nav ul li a.login {
+    background-color: #ffffff;
+    color: #00c853;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.custom-festival, .recent-festivals {
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #00c853;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
+
+.festival-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.festival-item {
+    flex: 1 1 calc(33.333% - 30px);
+    background-color: #f8f8f8;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.festival-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.select-btn {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #00c853;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.select-btn:hover {
+    background-color: #45a049;
+}
+
+.recent-festivals .gender-filter {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.gender-filter span {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #00c853;
+    font-weight: bold;
+}
+
+.gender-filter span.active {
+    color: #ffffff;
+    background-color: #00c853;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+footer {
+    background-color: rgb(136, 214, 108);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 40%px;
+    color: #f9faf8;
+    width: 1000%;
+     height: 10%;
+        
+
+}
